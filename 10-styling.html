@@ -25,32 +25,38 @@
     }
   </style>
   <script type="text/babel">
-    function Box({style, size, className = '', ...rest}) {
-      const sizeClassName = size ? `box--${size}` : ''
+    function Box({ style, size, className = "", ...rest }) {
+      const sizeClassName = size ? `box--${size}` : "";
       return (
         <div
           className={`box ${className} ${sizeClassName}`}
-          style={{fontStyle: 'italic', ...style}}
+          style={{ fontStyle: "italic", ...style }}
           {...rest}
         />
-      )
+      );
     }
 
     const element = (
       <div>
-        <Box size="small" style={{backgroundColor: 'lightblue'}}>
+        <Box size="small" style={{ backgroundColor: "lightblue" }}>
           small lightblue box
         </Box>
-        <Box size="medium" style={{backgroundColor: 'pink'}}>
+        <Box size="medium" style={{ backgroundColor: "pink" }}>
           medium pink box
         </Box>
-        <Box size="large" style={{backgroundColor: 'orange'}}>
+        <Box size="large" style={{ backgroundColor: "orange" }}>
           large orange box
         </Box>
         <Box>sizeless box</Box>
       </div>
-    )
+    );
 
-    ReactDOM.render(element, document.getElementById('root'))
+    ReactDOM.render(element, document.getElementById("root"));
   </script>
 </body>
+
+can use the spread operator to pass in multiple props, styles, classes We use
+className instead of class because class is a reserved word in JavaScript and it
+can access the DOM element. The style prob can take an object of key value pairs
+of styles, which is good for proper ordering of styles While the className prop
+can take a string of multiple classes, called in any order.

@@ -4,19 +4,36 @@
   <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
   <script type="text/babel">
-    const rootElement = document.getElementById('root')
+    const rootElement = document.getElementById("root");
 
     function tick() {
-      const time = new Date().toLocaleTimeString()
+      const time = new Date().toLocaleTimeString();
       const element = (
         <>
           <input readOnly value={time} />
           <input readOnly value={time} />
         </>
-      )
-      ReactDOM.render(element, rootElement)
+      );
+      ReactDOM.render(element, rootElement);
     }
 
-    setInterval(tick, 1000)
+    setInterval(tick, 1000);
   </script>
 </body>
+
+<!-- This example shows how react updates the DOM. 
+The DOM is updated every second with the current time. 
+The input elements are read only and the value is set to the current time. 
+The value is set to the current time by using the curly braces to interpolate the time variable. 
+The time variable is set to the current time using the new Date() function. 
+The new Date() function returns a new date object with the current date and time. 
+The toLocaleTimeString() function is called on the date object to get the current time in a string format. 
+The time variable is then set to the current time string. 
+The time variable is then interpolated into the input element value.
+
+As this is JSX, the input elements are self closing.
+Only the time prop is updated and not the whole input element.
+This is because the input element is not recreated every second.
+The input element is only updated with the new time prop.
+This is how react updates the DOM.
+The input keeps the focus and the cursor position. very cool. -->

@@ -5,22 +5,29 @@
   <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
   <script src="https://unpkg.com/prop-types@15.6.1/prop-types.js"></script>
   <script type="text/babel">
-    const rootElement = document.getElementById('root')
+    const rootElement = document.getElementById("root");
 
-    function SayHello({firstName, lastName}) {
+    function SayHello({ firstName, lastName }) {
       return (
         <div>
           Hello {firstName} {lastName}!
         </div>
-      )
+      );
     }
     SayHello.propTypes = {
       firstName: PropTypes.string.isRequired,
       lastName: PropTypes.string.isRequired,
-    }
+    };
 
-    const element = <SayHello firstName={false} />
+    const element = <SayHello firstName={false} />;
 
-    ReactDOM.render(element, rootElement)
+    ReactDOM.render(element, rootElement);
   </script>
 </body>
+
+<!-- prop-types allow you to define the type of props that a component expects. 
+This is useful for catching bugs early and providing helpful error messages.
+they are not required, but they are a good practice to use.
+Are not used in production, but are used in development.
+PropTypes are a way to document the intended types of properties passed to components.
+They can be used as validation checks for props passed to components also. -->

@@ -8,7 +8,16 @@
       <>
         <span>Hello</span> <span>World</span>
       </>
-    )
-    ReactDOM.render(element, document.getElementById('root'))
+    );
+    ReactDOM.render(element, document.getElementById("root"));
   </script>
 </body>
+
+<!-- how to create inline elements with react
+have to use frangments
+React.Fragment is abbreviated as empty open and close tags <> </> -->
+
+<!-- full react code without JSX abstraction > 
+  const element = React.createElement(React.Fragment, null, 
+  React.createElement("span", null, "Hello"), " ",
+  React.createElement("span", null, "World")); -->

@@ -4,8 +4,8 @@
   <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
   <script type="text/babel">
-    function Message({children}) {
-      return <div className="message">{children}</div>
+    function Message({ children }) {
+      return <div className="message">{children}</div>;
     }
 
     const element = (
@@ -13,8 +13,13 @@
         <Message>Hello World</Message>
         <Message>Goodbye World</Message>
       </div>
-    )
+    );
 
-    ReactDOM.render(element, document.getElementById('root'))
+    ReactDOM.render(element, document.getElementById("root"));
   </script>
 </body>
+
+<!-- The key here is to capitalize the function name. 
+This is a convention that React uses to determine if a function is a component or not. 
+If you don’t capitalize the function name, React will treat it as a regular function/ string. 
+and not a component. -->
